@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 40% 97%;
+    --foreground: 20 14% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14% 12%;
+    --primary: 173 55% 12%;
+    --primary-foreground: 36 40% 97%;
+    --secondary: 36 40% 92%;
+    --secondary-foreground: 20 14% 12%;
+    --muted: 36 20% 90%;
+    --muted-foreground: 20 10% 40%;
+    --accent: 39 46% 58%;
+    --accent-foreground: 20 14% 12%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 36 20% 86%;
+    --input: 36 20% 86%;
+    --ring: 173 55% 20%;
+    --radius: 0.75rem;
+    --chart-1: 173 55% 20%;
+    --chart-2: 39 46% 58%;
+    --chart-3: 20 30% 40%;
+    --chart-4: 145 30% 40%;
+    --chart-5: 10 60% 55%;
+    --sidebar-background: 173 55% 12%;
+    --sidebar-foreground: 36 40% 97%;
+    --sidebar-primary: 39 46% 58%;
+    --sidebar-primary-foreground: 20 14% 12%;
+    --sidebar-accent: 173 40% 20%;
+    --sidebar-accent-foreground: 36 40% 97%;
+    --sidebar-border: 173 40% 20%;
+    --sidebar-ring: 39 46% 58%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; font-family: var(--font-sans, system-ui, sans-serif); }
+  h1, h2, h3, h4, .font-display { font-family: var(--font-display, Georgia, serif); }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  .glass-dark {
+    background: rgba(15, 30, 30, 0.55);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .luxe-gradient {
+    background: linear-gradient(135deg, #0f2222 0%, #1a3939 60%, #24504a 100%);
+  }
+  .gold-text {
+    background: linear-gradient(90deg, #d4b170 0%, #f4e0a8 50%, #b98d3e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+.animate-fade-up { animation: fadeInUp 0.6s ease-out forwards; }
